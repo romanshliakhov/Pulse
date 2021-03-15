@@ -18,6 +18,48 @@ img {
   height: auto;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
 .visually-hidden {
   position: absolute;
 
