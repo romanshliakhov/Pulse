@@ -15,7 +15,7 @@ const svgstore = require("gulp-svgstore");
 const posthtml = require("gulp-posthtml");
 const include = require("posthtml-include");
 const del = require("del");
-const uglify = require("gulp-uglify");
+const uglify = require("gulp-uglify-es").default;
 const htmlmin = require("gulp-htmlmin");
 
 gulp.task("css", () => {
