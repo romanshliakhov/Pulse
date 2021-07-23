@@ -1,6 +1,11 @@
 .title {
-  color: blue;
   font-size: 35px;
   font-weight: 700;
   text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  &__left {
+    text-align: start;
+  }
 }
