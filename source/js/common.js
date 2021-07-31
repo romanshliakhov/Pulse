@@ -23,6 +23,49 @@ $(function () {
 
   toggleSlide('.catalog__item-link');
   toggleSlide('.catalog__item-back');
+
+  // modal
+  $('[data-modal=consultation]').on('click', function() {
+    $('.overlay, #consultation').fadeIn();
+  });
+
+  $('.modal__close').on('click', function() {
+    $('.overlay, #consultation, #thanks').fadeOut();
+  });
+
+  $('.button__catalog').each(function(i) {
+    $(this).on('click', function() {
+      $('#order .modal__descr').text($('.catalog__item-title').eq(i).text())
+      $('.overlay, #order').fadeIn();
+    });
+  });
+
+  function validateForms(form) {
+    $(form).validate( {
+      rules: {
+        name: "required",
+        phone: "required",
+        email: {
+          required: true,
+          email: true,
+        }
+      },
+      messages: {
+        name: "Пожалуйста, введите своё имя",
+        phone: "Пожалуйста, введите свой номер телефона",
+        email: {
+          required: "Пожалуйста, введите свою почту",
+          email: "Неправильно введен адрес почты name@domain.com"
+        }
+      }
+    });
+  };
+
+  validateForms('#consultation-form');
+  validateForms('#consultation form');
+  validateForms('#order form');
+
+  $('input[name=phone]').mask("+38 (999) 999-9999");;
 });
 
 
