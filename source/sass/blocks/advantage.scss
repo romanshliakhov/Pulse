@@ -43,4 +43,11 @@
       text-decoration: underline;
     }
   }
+
+  &__image {
+    &--animated {
+      animation: heartbeat 1.5s ease infinite;
+    }
+  }
 }
+
