@@ -76,11 +76,26 @@ $(function () {
     }).done(function () {
       $(this).find("input").val("");
       $('#consultation, #order').fadeOut();
-      $('.overlay, #thanks').fadeIn('');  
+      $('.overlay, #thanks').fadeIn('');
 
       $(form).trigger('reset');
     });
-    
+
     return false;
   });
+
+  // Smooth scroll
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 1000) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
+
+  $("a[href^='#']").click(function(){
+    const _href = $(this).attr("href");
+    $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+    return false;
+});
 });
